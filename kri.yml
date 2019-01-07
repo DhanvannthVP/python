@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  gather_facts: False
+  tasks:
+  - name: Create a ticket
+    snow_record:
+      username: admin
+      password: Praveen@2
+      instance: dev71301
+      state: present
+      table: change_request
+      data:
+        start_date: 2019-01-02 00:00:00 
+        short_description: "This is the test ticket from ansible"
+         
+      register: new_change_request
